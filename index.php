@@ -47,7 +47,7 @@
         echo "<div class='button-container'>";
         echo "<a href='upload.php' class='button'>Upload hier je bestanden</a>";
         echo "<a href='shorten.php' class='button'>Shorten je links hier</a>";
-        echo "<a href='files.php' class='button'>Je bestanden</a>'";
+        echo "<a href='files.php' class='button'>Je bestanden</a>";
         echo "</div>";
         echo "<p>This is your home page.</p>";
         echo "<a href='logout.php' class='button'>Logout</a>";

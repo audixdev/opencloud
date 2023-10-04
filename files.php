@@ -24,7 +24,9 @@
             while($row = $result->fetch_assoc()) {
                 $filename = $row['filename'];
                 $file_path = 'uploads/' . $filename;
-                $file_link = $_SERVER['HTTP_HOST'] . '/opencloud/opencloud/' . $file_path; // Aanpassen aan je eigen pad
+                
+                $file_link = 'http://' . $_SERVER['HTTP_HOST'] . '/opencloud/opencloud/' . $file_path;
+ // Aanpassen aan je eigen pad
 
                 echo "<p><a href='$file_link' target='_blank'>$filename</a></p>";
             }
