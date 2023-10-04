@@ -15,7 +15,7 @@
 
     // Controleer of de gebruiker is ingelogd
     if(isset($_SESSION['username'])){
-        $user_id = $_SESSION['user_id'];
+        $user_id = $_SESSION['user_id']; // Zet $user_id nadat de gebruiker is ingelogd
 
         $sql = "SELECT * FROM files WHERE user_id = '$user_id'";
         $result = $conn->query($sql);
@@ -38,6 +38,6 @@
     ?>
 
     <br>
-    <a href="home.php">Terug naar home</a>
+    <a href="index.php">Terug naar home</a>
 </body>
 </html>
