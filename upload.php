@@ -62,6 +62,6 @@
     </form>
 
     <br>
-    <a href="home.php">Terug naar home</a>
+    <a href="index.php">Terug naar home</a>
 </body>
 </html>
