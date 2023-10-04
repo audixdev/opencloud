@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Cloudsite</title>
+    <title>Welcome to Opencloud</title>
+    <link rel="icon" type="image/x-icon" href="/opencloud/opencloud/logo/icon.png" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,6 +51,8 @@
         echo "<a href='files.php' class='button'>Je bestanden</a>";
         echo "<a href='links.php' class='button'>Je links</a>";
         echo "</div>";
+        echo "<hr>";
+        echo "Welcome to v0.5-beta1";
         echo "<p>This is your home page.</p>";
         echo "<a href='logout.php' class='button'>Logout</a>";
     } else {
