@@ -73,7 +73,7 @@
 
     include 'db.php';
 
-    // Controleer of de gebruiker is ingelogd
+
     if(!isset($_SESSION['username'])){
         header('Location: login.php');
         exit();
@@ -85,31 +85,31 @@
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        // Controleer of het bestand al bestaat
+
         if (file_exists($target_file)) {
             echo "Sorry, het bestand bestaat al.";
             $uploadOk = 0;
         }
 
-        // Controleer de bestandsgrootte (hier beperkt tot 5 MB)
+
         if ($_FILES["file"]["size"] > 5000000) {
             echo "Sorry, je bestand is te groot.";
             $uploadOk = 0;
         }
 
-        // Toegestane bestandstypen (hier alleen afbeeldingen)
+
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif") {
             echo "Sorry, alleen JPG, JPEG, PNG & GIF bestanden zijn toegestaan.";
             $uploadOk = 0;
         }
 
-        // Als $uploadOk gelijk is aan 0, upload het bestand niet
+
         if ($uploadOk == 0) {
             echo "Sorry, je bestand is niet geüpload.";
         } else {
             if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-                // Voeg het bestand toe aan de database
+
                 $filename = basename($_FILES["file"]["name"]);
                 $user_id = $_SESSION['user_id'];
 

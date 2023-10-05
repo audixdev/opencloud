@@ -4,7 +4,7 @@ include 'db.php';
 if(isset($_GET['code'])) {
     $short_code = $_GET['code'];
 
-    // Zoek de originele URL bij de korte code
+
     $sql = "SELECT original_url FROM links WHERE short_code = '$short_code'";
     $result = $conn->query($sql);
 
@@ -12,7 +12,7 @@ if(isset($_GET['code'])) {
         $row = $result->fetch_assoc();
         $original_url = $row['original_url'];
 
-        // Stuur de gebruiker door naar de originele URL
+
         header("Location: $original_url");
         exit();
     } else {

@@ -73,17 +73,14 @@
 
     include 'db.php';
 
-    // Controleer of de gebruiker is ingelogd
     if(isset($_SESSION['username'])){
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $original_url = $_POST['url'];
-            $user_id = $_SESSION['user_id']; // Voeg deze regel toe om de user_id op te halen
+            $user_id = $_SESSION['user_id'];
 
-            // Genereer een willekeurige string van 6 tekens
             $short_code = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 6);
 
-            // Voeg de korte URL toe aan de database
-            $sql = "INSERT INTO links (original_url, short_code, user_id) VALUES ('$original_url', '$short_code', '$user_id')"; // Voeg user_id toe aan de query
+            $sql = "INSERT INTO links (original_url, short_code, user_id) VALUES ('$original_url', '$short_code', '$user_id')";
             if ($conn->query($sql) === TRUE) {
                 $short_url = $_SERVER['HTTP_HOST'] . '/opencloud/opencloud/short.php?code=' . $short_code;
                 echo "Korte URL: <a href='$short_url' target='_blank'>$short_url</a>";

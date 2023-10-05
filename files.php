@@ -42,9 +42,9 @@
 
     include 'db.php';
 
-    // Controleer of de gebruiker is ingelogd
+
     if(isset($_SESSION['username'])){
-        $user_id = $_SESSION['user_id']; // Zet $user_id nadat de gebruiker is ingelogd
+        $user_id = $_SESSION['user_id']; 
 
         $sql = "SELECT * FROM files WHERE user_id = '$user_id'";
         $result = $conn->query($sql);
@@ -54,7 +54,7 @@
                 $filename = $row['filename'];
                 $file_path = 'uploads/' . $filename;
 
-                $file_link = 'http://' . $_SERVER['HTTP_HOST'] . '/opencloud/opencloud/' . $file_path; // Aanpassen aan je eigen pad
+                $file_link = 'http://' . $_SERVER['HTTP_HOST'] . '/opencloud/opencloud/' . $file_path; 
 
                 echo "<p><a href='$file_link' target='_blank'>$filename</a></p>";
             }

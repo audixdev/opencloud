@@ -9,7 +9,7 @@
     <h1>Registreren</h1>
 
     <?php
-    // Controleer of er een foutbericht is ingesteld (bijvoorbeeld als de gebruikersnaam al bestaat)
+
     if(isset($_GET['error'])) {
         echo '<p style="color:red;">' . $_GET['error'] . '</p>';
     }

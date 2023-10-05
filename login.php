@@ -23,9 +23,9 @@
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password'])) {
-                $_SESSION['user_id'] = $row['id']; // Sla de gebruikers-ID op in de sessie
-                $_SESSION['username'] = $username; // Sla de gebruikersnaam op in de sessie
-                header('Location: index.php'); // Stuur de gebruiker door naar index.php
+                $_SESSION['user_id'] = $row['id']; 
+                $_SESSION['username'] = $username; 
+                header('Location: index.php'); 
                 exit();
             } else {
                 header('Location: login.php?error=Incorrecte wachtwoord');

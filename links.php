@@ -51,16 +51,16 @@
 
     include 'db.php';
 
-    // Controleer of de gebruiker is ingelogd
+    
     if(isset($_SESSION['username'])){
-        $user_id = $_SESSION['user_id']; // Zet $user_id nadat de gebruiker is ingelogd
+        $user_id = $_SESSION['user_id'];
 
         $sql = "SELECT original_url, short_code FROM links WHERE user_id = '$user_id'";
         $result = $conn->query($sql);
 
         if ($result) {
             if ($result->num_rows > 0) {
-                echo "<ul>"; // Open een lijst
+                echo "<ul>"; 
                 while($row = $result->fetch_assoc()) {
                     $original_url = $row['original_url'];
                     $short_code = $row['short_code'];
@@ -70,7 +70,7 @@
                     echo "<li>Originele URL: $original_url</li>";
                     echo "<li>Korte URL: <a href='$short_url' target='_blank'>$short_url</a></li>";
                 }
-                echo "</ul>"; // Sluit de lijst
+                echo "</ul>";
             } else {
                 echo "Er zijn geen korte URLs beschikbaar.";
             }
